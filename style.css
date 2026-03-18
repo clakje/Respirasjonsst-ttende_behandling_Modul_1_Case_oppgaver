@@ -90,12 +90,23 @@ body {
 }
 
 .header-top h1 {
+    flex: 1;
+    text-align: left;
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--hso-blue);
 }
 
+.header-top .btn {
+    flex: 0 0 auto;
+    margin: 0 0.5rem;
+    background-color: #E7F0F9;
+    text-align: center;
+}
+
 .progress-text {
+    flex: 1;
+    text-align: right;
     font-size: 0.875rem;
     color: var(--text-secondary);
     font-weight: 500;
