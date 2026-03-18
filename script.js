@@ -422,6 +422,9 @@ function showCompletionScreen() {
     document.querySelector('.app-main').classList.add('hidden');
     completionScreenEl.classList.remove('hidden');
     localStorage.setItem('highflow-progress', questionsData.length);
+    
+    // Notify Articulate Rise 360 that the block is complete
+    window.parent.postMessage({ type: 'complete' }, '*');
 }
 
 // Restart logic
