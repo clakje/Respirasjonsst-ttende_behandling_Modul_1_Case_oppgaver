@@ -362,45 +362,46 @@ function renderQuestion(index) {
 
 // Handle Option Selection
 function selectOption(selectedIndex) {
-    if (hasAnsweredCurrentQuestion) return; // Prevent multiple answers
-    hasAnsweredCurrentQuestion = true;
+    if (hasAnsweredCurrentQuestion) return; // Prevent multiple answers after correct
 
     const data = questionsData[currentQuestionIndex];
     const isCorrect = (selectedIndex === data.correctAnswerIndex);
     
     const optionBtns = optionsContainerEl.querySelectorAll('.option-btn');
 
-    // Highlight the buttons
-    optionBtns.forEach((btn, i) => {
-        btn.disabled = true; // disable all
-
-        if (i === data.correctAnswerIndex) {
-            if (i === selectedIndex) {
-                btn.classList.add('selected-correct');
-            } else {
-                btn.classList.add('correct-reveal'); // show the correct one
-            }
-        } else if (i === selectedIndex) {
-            btn.classList.add('selected-incorrect');
-        }
-    });
-
-    // Show feedback
-    feedbackTextEl.innerText = data.reasoning;
     if (isCorrect) {
-        feedbackBoxEl.classList.add('correct');
-    } else {
-        feedbackBoxEl.classList.add('incorrect');
-    }
-    feedbackSectionEl.classList.remove('hidden');
+        hasAnsweredCurrentQuestion = true;
+        // Highlight the buttons
+        optionBtns.forEach((btn, i) => {
+            btn.disabled = true; // disable all
 
-    // Show Next block
-    nextBtnEl.classList.remove('hidden');
-    
-    // Scroll to bottom slightly
-    setTimeout(() => {
-        nextBtnEl.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }, 100);
+            if (i === data.correctAnswerIndex) {
+                btn.classList.add('selected-correct');
+            }
+        });
+
+        // Show feedback
+        feedbackTextEl.innerText = data.reasoning;
+        feedbackBoxEl.className = 'feedback-box correct';
+        feedbackSectionEl.classList.remove('hidden');
+
+        // Show Next block
+        nextBtnEl.classList.remove('hidden');
+        
+        // Scroll to bottom slightly
+        setTimeout(() => {
+            nextBtnEl.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }, 100);
+    } else {
+        // Disabled just the clicked button and mark as incorrect
+        optionBtns[selectedIndex].disabled = true;
+        optionBtns[selectedIndex].classList.add('selected-incorrect');
+
+        // Show feedback
+        feedbackTextEl.innerText = "Prøv igjen";
+        feedbackBoxEl.className = 'feedback-box incorrect';
+        feedbackSectionEl.classList.remove('hidden');
+    }
 }
 
 // Move to logical next app state
