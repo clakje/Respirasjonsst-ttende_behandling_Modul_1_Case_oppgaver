@@ -1,0 +1,283 @@
+ 
+1 
+Kursskisse  
+Kurs skisse  for digitale læringselementer  
+Prosjektnavn:  Respirasjonsstøttende behandling – Modul 1_High -flow  
+Effektmål  
+Her skal du beskrive hvilke effekter eller gevinster du ønsker at læringen skal gi, for eksempel økt pasientsikkerhet, spart tid eller bedre samarbeid mellom avdelinger.  
+Effektmålet har betydning for hvordan kurset innrettes,  og hva du kan evaluere måloppnåelse for når kurset er tatt i bruk. Det er derfor nyttig å bruke litt tid på å gjøre effektmål et så 
+tydelig som mulig.  
+Hva vil dere oppnå? Hva er hensikten med kurset?  Gi sykepleierne nødvendig kunnskap til å kunne utføre respirasjonsstøttende behandling til pasienter på overvåknings - og 
+intensivenheter.  
+Hvordan kan måloppnåelse vurderes?   
+Læringsutbytte  
+Hvilke kunnskaper, ferdigheter og holdninger skal kurset bidra til? Når dere begynner å jobbe med kursskissen nedenfor vil de re bryte disse målene ned i konkrete læringsmål som 
+faginnholdet knyttes til.  
+Kunnskapsmål  (kunne, kjenne til, vite om etc.)  • Kunnskapsmål  o Ha kunnskap om prinsippene bak high -flow behandling  o Ha kunnskap om fysiologiske effekter  o Ha kunnskap om kliniske indikasjoner og kontraindikasjoner,  o kjenne til rutiner for manglende effekt av behandling  o Ha oversikt over komponentene i systemet og hvordan de fungerer  o Forstå viktigheten ved å ha oversikten over retningslinjer for oppstart og opptrapping, avvenning og overvåkning  
+ 
+Ferdighetsmål  (kunne utføre)  Dekkes ikke i e -læringskurset  
+• Ferdighetsmål  o Montere og klargjøre high -flow utstyret korrekt  o Justere flow, FiO2 og temperatur etter pasientens behov  o Overvåke pasientstatus og tolke relevante parametere  o Feilsøke og håndtere tekniske problemer og alarmer  o Dokumentere behandling og evaluere effekt  
+Holdningsmål  (reflektert over, tatt stilling til etc.)  Dekkes ikke i e -læringskurset  
+• Holdningsmål  o Prioritere pasient komfort og sikkerhet ved bruk av high -flow  o Være bevisst på etiske aspekter ved valg av behandling  o Samarbeide tverrfaglig for optimal pasientbehandling  o Ha en proaktiv holdning til kontinuerlig forbedring og oppdatering av kunnskap  
+ 
+ 
+Faginnhold/manus  
+Case 1: Hypoksemisk respirasjonssvikt  
+En 63 år gammel mann legges inn med pneumoni. Han har økende dyspne, lav O₂ -metning og er uttalt sliten i pusten . 
+ 
+Status ved ankomst  
+--PAGE--
+ 
+2 
+Kursskisse  
+Faginnhold/manus  
+RR: 32/min  
+SpO₂: 86 % på 10 L/min oksygen på maske  
+HF: 112/min  
+BT: 148/82  
+Temp: 38.8  °C 
+Bevissthet: våken, men utmattet  
+Auskultasjon: knatrelyder basalt bilateralt  
+Arbeid med respirasjon: bruk av aksessoriske muskler  
+ 
+Hva er den viktigste indikasjonen for å starte high -flow  hos denne pasienten?  
+A. Mild dyspné uten oksygenbehov  
+B. Hypoksemi til tross for høyt oksygen på maske  
+C. Mistanke om pneumothorax  
+D. Lav puls og hypotensjon  
+Begrunnelse : "Riktig! Denne pasienten har lav SpO2 til tross for 10 l/min oksygen på maske. Her må vi sikre korrekt oksygen mengde 
+samt kunne gi høyere konsentrasjon av oksygen med high -flow. Denne pasienten vil også ha stor fordel av både fuktet luft, redusert 
+dødrom og inspiratorisk støtte med dynamisk PEEP. Husk å følge opp bilateral behandling som kan være like viktig for utfallet  til 
+pasienten."  
+ 
+2. Hva er en vanlig flow -innstilling på high -flow  hos voksne?  
+A. 5–10 L/min  
+B. 1 0–20 L/min  
+C. 30–60 L/min  
+D. 80–100 L/min  
+Begrunnelse : "Riktig! Følg legens forordninger og lokale retningslinjer for oppstart og justeringer"  
+ 
+3. Hvilket parameter er viktigst å vurdere for tidlig effekt av high -flow ? 
+A. Temperatur i rommet  
+B. Respirasjonsfrekvens  
+--PAGE--
+ 
+3 
+Kursskisse  
+Faginnhold/manus  
+C. Farge på sputum  
+D. Endring i respirasjonsarbeid  
+Begrunnelse : "Riktig! Men ikke glem de andre målene som er avtalt med legen"  
+ 
+4. Når bør man vurdere NIV/intubasjon?  
+A. Etter 5 minutter uten bedring  
+B. Ved redusert respirasjonsarbeid  
+C. Ved økt hypoksemi og tretthet  
+D. Når pasienten ber om mer vann  
+Begrunnelse:   
+"Riktig! Hvis high -flow ikke hjelper etter justeringer som forordnet av lege må legen tilkalles for ny vurdering. Vedvarende hypoksemi og 
+økt tretthet er tydelige tegn på at behandlingstiltakene må endres. Nye behandlingstiltak kan være NIV eller IMV."  
+ 
+Case 2: KOLS -forverring med CO₂ -retensjon  
+En 71 år gammel kvinne med kjent alvorlig KOLS (GOLD 3) innlegges med dyspne og økende hoste.  
+Status  
+RR: 28  
+SpO₂: 88 % på 4 L/min nesegrime  
+HF: 104  
+BT: 134/76  
+Temp: 37.4  °C 
+Gass: pH 7.32, pCO₂ 8.2 kPa, pO₂ 7.4 kPa  
+Klinikk: sliten, men kontaktbar. Bruker leppepusting spontant.  
+ 
+Når kan high -flow  være et nyttig supplement hos en pasient med KOLS ‑forverring?  
+A. Når NIV ikke tolereres, eller som pauser mellom NIV ‑økter  
+B. Som primærbehandling ved alvorlig acidose  
+C. Når pasienten er helt stabil og ikke har respirasjonsproblemer  
+D. Ved mistanke om pneumothorax  
+--PAGE--
+ 
+4 
+Kursskisse  
+Faginnhold/manus  
+Begrunnelse : "Riktig! High -flow behandling  kan være et alternativ ved dårlig toleranse for NIV eller behandling ved respirasjonssvikt 
+type 1, men evidensgrunnlaget for high-flow er fortsatt mangelfullt."  
+T10.2.5 Akutt kolsforverring | Legemiddelhåndboka  
+ 
+Hvilket tegn tyder på forverret CO₂ -retensjon?  
+A. Pasienten blir mer våken  
+B. Forvirring  og somnolens  
+C. Bedret oksygenmetning  
+D. Bedret appetitt  
+Begrunnelse : "Riktig! Kriterier for sykehusinnleggelse kan være: Alvorlige symptomer/funn som forverret dyspne i hvile, cyanose, 
+perifere ødemer, forvirring eller somnolens med mer." T10.2.5 Akutt kolsforverring | Legemiddelhåndboka  
+ 
+Case 3: Akutt oksygeneringssvikt ved pneumoni  
+Pasient: En 67 år gammel kvinne innlegges på overvåkningen med feber, hoste og tiltagende dyspné. Hun har kjent 
+hypertensjon og type 2 ‑diabetes.  
+ 
+Status ved ankomst:  
+Respirationsfrekvens: 32/min  
+Puls: 118/min  
+BT: 102/64 mmHg  
+Temperatur: 38,9 °C  
+SpO₂: 84 % på 10 L/min oksygen via oksygenmaske med reservoir.  
+Pasienten har en anstrengt respirasjon, bruker aksessorisk respirasjons muskler og er tydelig dyspnéisk.  
+ 
+Blodgass med 10 L/min O₂ (oksygenmaske med reservoir):  
+pH: 7,46  
+PaCO₂: 4,7 kPa  
+PaO₂: 7,8 kPa  
+HCO₃–: 24  
+--PAGE--
+ 
+5 
+Kursskisse  
+Faginnhold/manus  
+Laktat: 1,6 mmol/L  
+Rtg. thorax: Konsolidering basalt venstre side forenlig med pneumoni.  
+ 
+Til tross for maksimal oksygentilførsel via maske oppnår pasienten ikke tilfredsstillende oksygenering.  
+ 
+Hva er neste steg i behandlingen?  
+A. Øke O₂ ‑flow til 15 L/min på brillekateter  
+B. Starte CPAP uten oksygentilførsel  
+C. Starte high ‑flow oksygenbehandling med høy flow og FiO₂  
+D. Avvente videre tiltak og se om pasienten stabiliserer seg spontant  
+ 
+Begrunnelse: “Riktig! Pasienten har akutt oksygenasjonssvikt (hypoksemisk respirasjonssvikt, type 1) som ikke bedres av 
+oksygenmaske med reservoar.  
+High‑flow er anbefalt i slike tilfeller fordi det:  
+Gir nøyaktig titrerbar FiO₂ opp til 1,0  
+Kan levere opptil 60 L/min flow  
+Reduserer anatomisk dødrom  
+Gir lavt nivå av PEEP som bedrer oksygeneringen  
+Oppleves komfortabelt for pasienten  
+Kan redusere behov for intubasjon hos enkelte pasienter med pneumoni”  
+ 
+Case 4: Postoperativ respirasjonssvikt etter abdominalkirurgi  
+En 45 år gammel kvinne er 8 timer postoperativ etter en større laparotomi. Hun har betydelig smerter, overfladisk 
+respirasjon og fallende O₂ -metning.  
+ 
+Status  
+RR: 26  
+SpO₂: 90 % på 6 L/min oksygen  
+HF: 98  
+BT: 120/70  
+--PAGE--
+ 
+6 
+Kursskisse  
+Faginnhold/manus  
+Smerte: VAS 7  
+Klinikk: engstelig, klarer ikke å ta dype innpust  
+Lunger: lette basale atelektaser på rtg.  
+ 
+Hvorfor er high -flow  nyttig til postoperative pasienter?  
+A. Gir høyt positivt trykk og full ventilasjon  
+B. Forhindrer hypoglykemi  
+C. Bedrer oksygenering og reduserer respirasjonsarbeid    
+D. Erstatter behov for smertebehandling  
+ 
+Begrunnelse: “Riktig! Etter operasjon kan pasienten ha fått b åde invasiv respirasj onsstøtte , sterke smertestillende, 
+sovemedisiner og muskelrelakserende legemidler . I tillegg kan enkelte pasientgrupper med tilleggsykdommer trenge ekstra 
+støttende behandling etter operasjon. H igh-flow vil kunne lette den postoperative fasen ved å sikre korrekt oksygentilførsel , 
+redusere dødromsventilasjon , lette respirasjonsarbeid  og fremme sekretmobilisering ”.  
+ 
+Hvilket funn best forklarer hvorfor high -flow kan bedre oksygeneringen hos postoperative pasienter med atelektaser?  
+ 
+A. High -flow øker tidalvolumet gjennom aktiv ventilasjonsstøtte  
+B. High -flow skaper et lett positivt end ‑ekspiratorisk trykk som bidrar til alveolær rekruttering  
+C. High -flow øker hjertets minuttvolum og dermed oksygenleveransen  
+D. High -flow reduserer kroppens metabolisme og dermed oksygenforbruket  
+ 
+Begrunnelse : "Riktig! Hvis man instruerer pasienten til å puste med lukket munn under high -flow behandling vil PEEP effekten bli bedre 
+og altele ktasene vil letter e kunne bli rekruttert. På en oppvåkningsavdeling vil pasienter kort tid etter operasjon ofte være påvirket av 
+anestesimidler. I den forbindelsen vil high -flow også bidra til redusert dødromsventilering og gi nøyaktig inspirert oksygen som også vil 
+bedre ok sygeneringen."  
+ 
+Hvilken behandling må optimaliseres parallelt med high -flow  for at pasienten skal puste bedre?  
+--PAGE--
+ 
+7 
+Kursskisse  
+Faginnhold/manus  
+A. Vanntilførsel  
+B. Smertebehandling  
+C. Koffein  
+D. Antihistaminer  
+ 
+Begrunnelse : "Riktig! I dette eksempelet har pasienten gjennomgått lapratomi som ofte innebære sterke smerter i mageregionen. Når 
+pasienten puster inn vil diafragma dytte mot operasjonsområdet som igjen vil gi ytterligere smerter. For at pasienten skal kl are å puste 
+godt nok er  det viktig at det gis adekvat smertelindring."  
+ 
+Avslutning  
+Nå som du har gjennomført kurset skal du videreutvikle dine kunnskaper gjennom praksis og erfaring. Du er velkommen 
+tilbake for repetisjon.  
+ 
+Ønsker du å lære mer e om avansert respirasjonsstøttende behandling ? Sjekk ut Respirasjonsstøttende behandling – Modul 
+2 NIV  og Respirasjonsstøttende behandling – Modul 3 IMV . 
+ 
+Lykke til videre  
+ 
+Bellika, B. (2019). Noen pasienter bør ikke intuberes før de kommer på sykehus. Dagens Medisin.  
+ 
+Bräunlich, J., Köhler, M., & Wirtz, H. (2016). Nasal highflow improves ventilation in patients with COPD. International Journ al 
+of Chronic Obstructive Pulmonary Disease, 11, 1077 –1085. https://doi.org/10.2147/COPD.S104616  
+ 
+Crofts, P., Yong, F., Smith, M., & McMahon, S. (2020). High flow oxygen in anaesthesia and critical care (ATOTW 437). World 
+Federation of Societies of Anaesthesiologists.  
+ 
+Ding, L., Wu, T., Liu, H., He, Y., Zhang, Z., Ma, W., & Wu, C. (2025). Comparison of the efficacy of high ‑flow nasal cannula 
+with different initial flow settings in AECOPD. Pulmonology, 31(1). https://doi.org/10.1080/25310429.2025.2598913  
+ 
+--PAGE--
+ 
+8 
+Kursskisse  
+Faginnhold/manus  
+Frassanito, L., et al. (2023). Effect of a pre -emptive 2 -hour session of high -flow nasal oxygen on postoperative oxygenation 
+after major gynaecologic surgery: A randomised clinical trial. British Journal of Anaesthesia, 131(4), 775 –785.  
+ 
+Helsedirektoratet. (2023). § 4 ‑9 Pasientens rett til å nekte helsehjelp i s ærlige situasjoner.  
+ 
+Hyzy, R. C. (2025, October 9). Heated and humidified high ‑flow nasal oxygen in adults: Practical considerations and 
+potential applications. UpToDate.  
+https://www.uptodate.com/contents/heated -and -humidified -high -flow -nasal -oxygen -in-adults -practical -considerations -
+and -potential -applications   
+ 
+Kumar, V., Harshavardhan, H., Bhavana, K., & Bharti, B. (2018). Peak nasal inspiratory flow: A comparative study. 
+International Journal of Otorhinolaryngology and Head and Neck Surgery, 4(5), 1293 –1296.  
+ 
+Liu, C., Lin, Q., & Li, D. (2024). High ‑flow nasal cannula therapy versus conventional oxygen therapy for adult patients after 
+cardiac surgery: A systematic review and meta ‑analysis. Review Article, 66, 47 –55. 
+ 
+Malhotra, A., & Schwartzstein, R. M. (2024, November 26). Adverse effects of supplemental oxygen. In UpToDate. Retrieved 
+February 2026, from https://www.uptodate.com/contents/adverse -effects -of-supplemental -oxygen   
+ 
+Metodebok.no. (2019). Akutt hypoksisk respirasjonssvikt. https://metodebok.no/emne/5hbRtBLE/akutt -hypoksisk -
+respirasjonssvikt/akutt -organsvikt -(uib ) 
+ 
+Parke, R. L., & McGuinness, S. P. (2013). Pressures delivered by nasal high ‑flow oxygen during all phases of the respiratory 
+cycle. Respiratory Care, 58(10), 1621 –1624. https://doi.org/10.4187/respcare.02358  
+ 
+Petkar, S., Wanjari, D., & Priya, V. (2024). A comprehensive review on high ‑flow nasal cannula oxygen therapy in critical 
+care. Cureus, 16(8), e66264. https://doi.org/10.7759/cureus.66264  
+ 
+Peters, S. G., Holets, S. R., & Gay, P. C. (2013). High ‑flow nasal cannula therapy in do ‑not‑intubate patients with hypoxemic 
+respiratory distress. Respiratory Care, 58(4), 597 –600. https://doi.org/10.4187/respcare.01887  
+--PAGE--
+ 
+9 
+Kursskisse  
+Faginnhold/manus  
+ 
+Roca, O., Caralt, B., Messika, J., et al. (2019). An index combining respiratory rate and oxygenation to predict outcome of 
+nasal high ‑flow therapy. American Journal of Respiratory and Critical Care Medicine, 199(11), 1368 –1376. 
+https://doi.org/10.1164/rccm.201803 -0589OC  
+ 
+Sharma, S., Danckers, M., Sanghavi, D., & Chakraborty, R. (2023). High‑flow nasal cannula. StatPearls.  
+ 
+ 
+ 
+ 
+--PAGE--

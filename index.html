@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-flow Behandling: Case-oppgaver</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Skjerm for å velge visning (Mobil / Desktop) -->
+    <div id="view-selector" class="view-selector-overlay active">
+        <div class="view-selector-card">
+            <h2>Velg visning</h2>
+            <p>Hvordan ønsker du å se modulen?</p>
+            <div class="view-options">
+                <button class="btn btn-primary" onclick="setViewMode('mobile')">Mobil (Smal)</button>
+                <button class="btn btn-secondary" onclick="setViewMode('desktop')">Desktop (Bred)</button>
+            </div>
+            <button class="btn btn-text" onclick="resetProgress()">Slett lagret fremdrift</button>
+        </div>
+    </div>
+
+    <div id="app-container" class="app-container desktop">
+        
+        <!-- Header & Progress -->
+        <header class="app-header">
+            <div class="header-top">
+                <h1>High-flow Behandling</h1>
+                <span class="progress-text" id="progress-text">Spørsmål 1 av 10</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progress-bar-fill" style="width: 10%;"></div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="app-main">
+            <!-- Clinical Case Context -->
+            <section class="case-section">
+                <h2 id="case-title" class="case-title">Case tittel</h2>
+                <div class="case-description" id="case-description">
+                    Pasientbeskrivelse...
+                </div>
+
+                <!-- Clinical Data Box (Vitalia) -->
+                <div class="clinical-data-box">
+                    <div class="clinical-header">Kliniske parametere ved ankomst</div>
+                    <div class="clinical-grid" id="clinical-grid">
+                        <!-- Genereres fra JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Question and Options Area -->
+            <section class="question-section" id="question-section">
+                <h3 class="question-text" id="question-text">Spørsmålstekst?</h3>
+                <div class="options-container" id="options-container">
+                    <!-- Genereres fra JS -->
+                </div>
+            </section>
+
+            <!-- Reasoning (Feedback) Area -->
+            <section class="feedback-section hidden" id="feedback-section">
+                <div class="feedback-box" id="feedback-box">
+                    <h4 class="feedback-title" id="feedback-title">Begrunnelse</h4>
+                    <p class="feedback-text" id="feedback-text">Feedback kommer her...</p>
+                </div>
+            </section>
+
+            <!-- Action Area -->
+            <footer class="app-footer">
+                <button id="next-btn" class="btn btn-primary btn-next hidden" onclick="nextQuestion()">Neste</button>
+            </footer>
+        </main>
+
+        <!-- Completion Screen -->
+        <div id="completion-screen" class="completion-screen hidden">
+            <div class="completion-card">
+                <h2>Modul fullført</h2>
+                <p>Nå som du har gjennomført kurset skal du videreutvikle dine kunnskaper gjennom praksis og erfaring. Du er velkommen tilbake for repetisjon.</p>
+                <div class="completion-links">
+                    <p>Ønsker du å lære mer om avansert respirasjonsstøttende behandling?</p>
+                    <ul>
+                        <li>Modul 2: NIV</li>
+                        <li>Modul 3: IMV</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary" onclick="restartModule()">Start på nytt</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
