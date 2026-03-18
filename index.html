@@ -15,8 +15,8 @@
             <h2>Velg visning</h2>
             <p>Hvordan ønsker du å se modulen?</p>
             <div class="view-options">
-                <button class="btn btn-primary" onclick="setViewMode('mobile')">Mobil (Smal)</button>
-                <button class="btn btn-secondary" onclick="setViewMode('desktop')">Desktop (Bred)</button>
+                <button class="btn btn-primary" onclick="setViewMode('mobile')">Jeg bruker mobil.</button>
+                <button class="btn btn-secondary" onclick="setViewMode('desktop')">Jeg bruker PC.</button>
             </div>
             <button class="btn btn-text" onclick="resetProgress()">Slett lagret fremdrift</button>
         </div>
@@ -28,6 +28,7 @@
         <header class="app-header">
             <div class="header-top">
                 <h1>High-flow Behandling</h1>
+                <button class="btn btn-secondary btn-sm" onclick="showViewSelector()">Endre visning</button>
                 <span class="progress-text" id="progress-text">Spørsmål 1 av 10</span>
             </div>
             <div class="progress-bar-container">

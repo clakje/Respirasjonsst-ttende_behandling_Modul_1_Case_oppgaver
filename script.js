@@ -273,6 +273,11 @@ function init() {
     renderQuestion(currentQuestionIndex);
 }
 
+// Function to show View Selector
+function showViewSelector() {
+    viewSelectorOverlay.classList.add('active');
+}
+
 // Function to set View Mode (Desktop/Mobile)
 function setViewMode(mode, save = true) {
     if (save) {
