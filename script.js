@@ -84,7 +84,7 @@ const questionsData = [
         correctAnswerIndex: 2, // C
         reasoning: "Riktig! Hvis high-flow ikke hjelper etter justeringer som forordnet av lege må legen tilkalles for ny vurdering. Vedvarende hypoksemi og økt tretthet er tydelige tegn på at behandlingstiltakene må endres. Nye behandlingstiltak kan være NIV eller IMV."
     },
-    
+
     // --- CASE 2 ---
     {
         caseTitle: "Case 2: KOLS-forverring med CO₂-retensjon",
@@ -95,7 +95,7 @@ const questionsData = [
             "HF": "104/min",
             "BT": "134/76",
             "Temp": "37.4 °C",
-            "Gass": "pH 7.32, pCO₂ 8.2 kPa, pO₂ 7.4 kPa",
+            "Blodgass": "pH 7.32, pCO₂ 8.2 kPa, pO₂ 7.4 kPa",
             "Klinikk": "Sliten, men kontaktbar. Bruker leppepusting spontant."
         },
         question: "5. Når kan high-flow være et nyttig supplement hos en pasient med KOLS-forverring?",
@@ -117,7 +117,7 @@ const questionsData = [
             "HF": "104/min",
             "BT": "134/76",
             "Temp": "37.4 °C",
-            "Gass": "pH 7.32, pCO₂ 8.2 kPa, pO₂ 7.4 kPa",
+            "Blodgass": "pH 7.32, pCO₂ 8.2 kPa, pO₂ 7.4 kPa",
             "Klinikk": "Sliten, men kontaktbar. Bruker leppepusting spontant."
         },
         question: "6. Hvilket tegn tyder på forverret CO₂-retensjon?",
@@ -134,16 +134,16 @@ const questionsData = [
     // --- CASE 3 ---
     {
         caseTitle: "Case 3: Akutt oksygeneringssvikt ved pneumoni",
-        caseDescription: "En 67 år gammel kvinne innlegges på overvåkningen med feber, hoste og tiltagende dyspné. Kjente sykdommer er hypertensjon og type 2-diabetes. Til tross for maksimal oksygentilførsel via maske oppnår pasienten ikke tilfredsstillende oksygenering. Konsolidering basalt venstre side forenlig med pneumoni (Rtg. thorax).",
+        caseDescription: "En 67 år gammel kvinne innlegges på overvåkningen med feber, hoste og tiltagende dyspné. Kjente sykdommer er hypertensjon og type 2-diabetes. Til tross for maksimal oksygentilførsel via maske oppnår pasienten ikke tilfredsstillende oksygenering. Røntgen toraks: Bruker konsolidering basalt venstre side forenlig med pneumoni.",
         clinicalData: {
             "RR": "32/min",
             "SpO₂": "84 % på 10 L/min O₂ via oksygenmaske med reservoir",
             "HF": "118/min",
             "BT": "102/64 mmHg",
             "Temp": "38.9 °C",
-            "Gass": "pH 7.46, PaCO₂ 4.7 kPa, PaO₂ 7.8 kPa, HCO₃– 24",
             "Laktat": "1.6 mmol/L",
-            "Status": "Anstrengt respirasjon, bruker aksessorisk resp. muskler, dyspnéisk."
+            "Blodgass": "pH 7.46, PaCO₂ 4.7 kPa, PaO₂ 7.8 kPa, HCO₃– 24",
+            "Status": "Anstrengt respirasjon, bruker aksessorisk respirasjonsmuskler, dyspnéisk."
         },
         question: "7. Hva er neste steg i behandlingen?",
         options: [
@@ -159,7 +159,7 @@ const questionsData = [
     // --- CASE 4 ---
     {
         caseTitle: "Case 4: Postoperativ respirasjonssvikt etter abdominalkirurgi",
-        caseDescription: "En 45 år gammel kvinne er 8 timer postoperativ etter en større laparotomi. Hun har betydelig smerter, overfladisk respirasjon og fallende O₂-metning. Lette basale atelektaser på rtg.",
+        caseDescription: "En 45 år gammel kvinne er 8 timer postoperativ etter en større laparotomi. Hun har betydelig smerter, overfladisk respirasjon og fallende O₂-metning. Lette basale atelektaser på røntgen toraks.",
         clinicalData: {
             "RR": "26/min",
             "SpO₂": "90 % på 6 L/min oksygen",
@@ -180,7 +180,7 @@ const questionsData = [
     },
     {
         caseTitle: "Case 4: Postoperativ respirasjonssvikt etter abdominalkirurgi",
-        caseDescription: "En 45 år gammel kvinne er 8 timer postoperativ etter en større laparotomi. Hun har betydelig smerter, overfladisk respirasjon og fallende O₂-metning. Lette basale atelektaser på rtg.",
+        caseDescription: "En 45 år gammel kvinne er 8 timer postoperativ etter en større laparotomi. Hun har betydelig smerter, overfladisk respirasjon og fallende O₂-metning. Lette basale atelektaser på røntgen toraks.",
         clinicalData: {
             "RR": "26/min",
             "SpO₂": "90 % på 6 L/min oksygen",
@@ -201,7 +201,7 @@ const questionsData = [
     },
     {
         caseTitle: "Case 4: Postoperativ respirasjonssvikt etter abdominalkirurgi",
-        caseDescription: "En 45 år gammel kvinne er 8 timer postoperativ etter en større laparotomi. Hun har betydelig smerter, overfladisk respirasjon og fallende O₂-metning. Lette basale atelektaser på rtg.",
+        caseDescription: "En 45 år gammel kvinne er 8 timer postoperativ etter en større laparotomi. Hun har betydelig smerter, overfladisk respirasjon og fallende O₂-metning. Lette basale atelektaser på røntgen toraks.",
         clinicalData: {
             "RR": "26/min",
             "SpO₂": "90 % på 6 L/min oksygen",
@@ -225,6 +225,9 @@ const questionsData = [
 // Local State
 let currentQuestionIndex = 0;
 let hasAnsweredCurrentQuestion = false;
+let firstAttemptCorrect = 0;       // UX-1: track first-attempt correct answers
+let hasFailedCurrentQuestion = false; // UX-1: track if user failed current question
+const answeredQuestions = new Map(); // UX-6: map of index -> { selectedIndex, wasFirstAttempt }
 
 // DOM Elements
 const viewSelectorOverlay = document.getElementById('view-selector');
@@ -243,7 +246,26 @@ const feedbackSectionEl = document.getElementById('feedback-section');
 const feedbackBoxEl = document.getElementById('feedback-box');
 const feedbackTextEl = document.getElementById('feedback-text');
 const nextBtnEl = document.getElementById('next-btn');
+const backBtnEl = document.getElementById('back-btn');           // UX-6
 const completionScreenEl = document.getElementById('completion-screen');
+const completionScoreEl = document.getElementById('completion-score'); // UX-1
+
+// Helper to format subscripts for medical terms (SpO2, O2, CO2, etc.)
+function formatSubscripts(text) {
+    if (typeof text !== 'string') return text;
+    let html = text;
+    // Replace most specific terms first, then general terms
+    html = html.replace(/spo[₂2]/gi, 'S<sub>p</sub>O<sub>2</sub>');
+    html = html.replace(/paco[₂2]/gi, 'P<sub>a</sub>CO<sub>2</sub>');
+    html = html.replace(/pao[₂2]/gi, 'P<sub>a</sub>O<sub>2</sub>');
+    html = html.replace(/pco[₂2]/gi, 'pCO<sub>2</sub>');
+    html = html.replace(/po[₂2]/gi, 'pO<sub>2</sub>');
+    html = html.replace(/fio[₂2]/gi, 'FiO<sub>2</sub>');
+    html = html.replace(/co[₂2]/gi, 'CO<sub>2</sub>');
+    html = html.replace(/o[₂2]/gi, 'O<sub>2</sub>');
+    html = html.replace(/hco[₃3]/gi, 'HCO<sub>3</sub>');
+    return html;
+}
 
 // Initialize the app
 function init() {
@@ -259,6 +281,17 @@ function init() {
 
     // Check local storage for progress
     const savedProgress = localStorage.getItem('highflow-progress');
+    const savedScore = localStorage.getItem('highflow-firstAttempt');
+    if (savedScore !== null) {
+        firstAttemptCorrect = parseInt(savedScore, 10);
+    }
+    const savedAnswered = localStorage.getItem('highflow-answered');
+    if (savedAnswered) {
+        try {
+            const parsed = JSON.parse(savedAnswered);
+            parsed.forEach(([k, v]) => answeredQuestions.set(k, v));
+        } catch (e) { /* ignore */ }
+    }
     if (savedProgress !== null) {
         currentQuestionIndex = parseInt(savedProgress, 10);
         // Ensure we don't start out of bounds
@@ -283,9 +316,9 @@ function setViewMode(mode, save = true) {
     if (save) {
         localStorage.setItem('highflow-view', mode);
     }
-    
+
     viewSelectorOverlay.classList.remove('active');
-    
+
     if (mode === 'mobile') {
         appContainer.classList.remove('desktop');
         appContainer.classList.add('mobile');
@@ -303,12 +336,13 @@ function setViewMode(mode, save = true) {
 // Render the current question to DOM
 function renderQuestion(index) {
     hasAnsweredCurrentQuestion = false;
+    hasFailedCurrentQuestion = false; // UX-1: reset fail flag
     const data = questionsData[index];
 
     // Update Progress Bar
     const total = questionsData.length;
     const progressPercent = ((index) / total) * 100;
-    progressBarFill.style.width = Math.max(progressPercent, 5) + '%'; 
+    progressBarFill.style.width = Math.max(progressPercent, 5) + '%';
     progressText.innerText = `Spørsmål ${index + 1} av ${total}`;
 
     // Hide feedback & next button
@@ -316,28 +350,51 @@ function renderQuestion(index) {
     feedbackBoxEl.className = 'feedback-box'; // reset colors
     nextBtnEl.classList.add('hidden');
 
+    // UX-6: Show/hide back button
+    if (index > 0) {
+        backBtnEl.classList.remove('hidden');
+    } else {
+        backBtnEl.classList.add('hidden');
+    }
+
     // Populate Case Text
-    caseTitleEl.innerText = data.caseTitle;
-    caseDescriptionEl.innerText = data.caseDescription;
+    caseTitleEl.innerHTML = formatSubscripts(data.caseTitle);
+    caseDescriptionEl.innerHTML = formatSubscripts(data.caseDescription);
 
     // Populate Clinical Data Grid
+    const caseKeys = Object.keys(data.clinicalData);
+    const group1Keys = ['rr', 'spo₂', 'spo2'];
+    const group2Keys = ['hf', 'bt', 'temp', 'laktat'];
+    const group2Count = caseKeys.filter(k => group2Keys.includes(k.toLowerCase())).length;
+
     clinicalGridEl.innerHTML = '';
     for (const [key, value] of Object.entries(data.clinicalData)) {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'clinical-item';
-        
-        // If string is relatively long, span full width
-        if (value.length > 25) {
+
+        const lowerKey = key.toLowerCase();
+        if (group1Keys.includes(lowerKey)) {
+            itemDiv.classList.add('grid-row-1');
+        } else if (group2Keys.includes(lowerKey)) {
+            itemDiv.classList.add('grid-row-2');
+            if (group2Count === 3) {
+                itemDiv.classList.add('span-4');
+            } else if (group2Count === 4) {
+                itemDiv.classList.add('span-3');
+            } else {
+                itemDiv.classList.add('span-6');
+            }
+        } else {
             itemDiv.classList.add('full-width');
         }
 
         const labelDiv = document.createElement('div');
         labelDiv.className = 'clinical-label';
-        labelDiv.innerText = key;
+        labelDiv.innerHTML = formatSubscripts(key);
 
         const valDiv = document.createElement('div');
         valDiv.className = 'clinical-value';
-        valDiv.innerText = value;
+        valDiv.innerHTML = formatSubscripts(value);
 
         itemDiv.appendChild(labelDiv);
         itemDiv.appendChild(valDiv);
@@ -345,13 +402,19 @@ function renderQuestion(index) {
     }
 
     // Populate Question and Options
-    questionTextEl.innerText = data.question;
+    questionTextEl.innerHTML = formatSubscripts(data.question);
     optionsContainerEl.innerHTML = '';
-    
+
+    // UX-6: If this question was already answered, render as read-only
+    if (answeredQuestions.has(index)) {
+        renderAnsweredQuestion(index, data);
+        return;
+    }
+
     data.options.forEach((optText, i) => {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
-        btn.innerText = optText;
+        btn.innerHTML = formatSubscripts(optText);
         btn.onclick = () => selectOption(i);
         optionsContainerEl.appendChild(btn);
     });
@@ -360,17 +423,62 @@ function renderQuestion(index) {
     localStorage.setItem('highflow-progress', index);
 }
 
+// UX-6: Render a previously answered question as read-only
+function renderAnsweredQuestion(index, data) {
+    const answered = answeredQuestions.get(index);
+    hasAnsweredCurrentQuestion = true;
+
+    data.options.forEach((optText, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.disabled = true;
+        btn.innerHTML = formatSubscripts(optText);
+
+        if (i === data.correctAnswerIndex) {
+            btn.classList.add('selected-correct');
+        }
+        optionsContainerEl.appendChild(btn);
+    });
+
+    // Show feedback
+    feedbackTextEl.innerHTML = '✓ ' + formatSubscripts(data.reasoning);
+    feedbackBoxEl.className = 'feedback-box correct';
+    feedbackSectionEl.classList.remove('hidden');
+
+    // Show Next button only if not at the furthest answered question
+    const maxAnswered = Math.max(...answeredQuestions.keys());
+    if (index <= maxAnswered && index < questionsData.length - 1) {
+        nextBtnEl.classList.remove('hidden');
+    } else if (index >= questionsData.length - 1) {
+        nextBtnEl.classList.add('hidden');
+    }
+}
+
 // Handle Option Selection
 function selectOption(selectedIndex) {
     if (hasAnsweredCurrentQuestion) return; // Prevent multiple answers after correct
 
     const data = questionsData[currentQuestionIndex];
     const isCorrect = (selectedIndex === data.correctAnswerIndex);
-    
+
     const optionBtns = optionsContainerEl.querySelectorAll('.option-btn');
 
     if (isCorrect) {
         hasAnsweredCurrentQuestion = true;
+
+        // UX-1: Count first-attempt correct
+        if (!hasFailedCurrentQuestion) {
+            firstAttemptCorrect++;
+            localStorage.setItem('highflow-firstAttempt', firstAttemptCorrect);
+        }
+
+        // UX-6: Track answered question
+        answeredQuestions.set(currentQuestionIndex, {
+            selectedIndex: selectedIndex,
+            wasFirstAttempt: !hasFailedCurrentQuestion
+        });
+        localStorage.setItem('highflow-answered', JSON.stringify([...answeredQuestions]));
+
         // Highlight the buttons
         optionBtns.forEach((btn, i) => {
             btn.disabled = true; // disable all
@@ -380,39 +488,69 @@ function selectOption(selectedIndex) {
             }
         });
 
-        // Show feedback
-        feedbackTextEl.innerText = data.reasoning;
+        // UX-5: Show feedback with ✓ icon
+        feedbackTextEl.innerHTML = '✓ ' + formatSubscripts(data.reasoning);
         feedbackBoxEl.className = 'feedback-box correct';
         feedbackSectionEl.classList.remove('hidden');
 
         // Show Next block
         nextBtnEl.classList.remove('hidden');
-        
+
         // Scroll to bottom slightly
         setTimeout(() => {
             nextBtnEl.scrollIntoView({ behavior: 'smooth', block: 'end' });
         }, 100);
     } else {
+        // UX-1: Mark that user has failed this question
+        hasFailedCurrentQuestion = true;
+
         // Disabled just the clicked button and mark as incorrect
         optionBtns[selectedIndex].disabled = true;
         optionBtns[selectedIndex].classList.add('selected-incorrect');
 
-        // Show feedback
-        feedbackTextEl.innerText = "Prøv igjen";
+        // UX-5: Show feedback with ✗ icon
+        feedbackTextEl.innerHTML = '✗ Prøv igjen';
         feedbackBoxEl.className = 'feedback-box incorrect';
         feedbackSectionEl.classList.remove('hidden');
     }
 }
 
-// Move to logical next app state
+// Move to logical next app state (UX-3: with fade animation)
 function nextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex >= questionsData.length) {
-        showCompletionScreen();
-    } else {
+    const appMain = document.querySelector('.app-main');
+    appMain.classList.add('fade-out');
+    appMain.classList.remove('fade-in');
+
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex >= questionsData.length) {
+            appMain.classList.remove('fade-out');
+            appMain.classList.add('fade-in');
+            showCompletionScreen();
+        } else {
+            renderQuestion(currentQuestionIndex);
+            appMain.classList.remove('fade-out');
+            appMain.classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, 250);
+}
+
+// UX-6: Navigate to previous question
+function previousQuestion() {
+    if (currentQuestionIndex <= 0) return;
+
+    const appMain = document.querySelector('.app-main');
+    appMain.classList.add('fade-out');
+    appMain.classList.remove('fade-in');
+
+    setTimeout(() => {
+        currentQuestionIndex--;
         renderQuestion(currentQuestionIndex);
+        appMain.classList.remove('fade-out');
+        appMain.classList.add('fade-in');
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    }, 250);
 }
 
 // End of module
@@ -422,7 +560,11 @@ function showCompletionScreen() {
     document.querySelector('.app-main').classList.add('hidden');
     completionScreenEl.classList.remove('hidden');
     localStorage.setItem('highflow-progress', questionsData.length);
-    
+
+    // UX-1: Show first-attempt score
+    const total = questionsData.length;
+    completionScoreEl.innerText = `Du svarte riktig på ${firstAttemptCorrect} av ${total} på første forsøk.`;
+
     // Notify Articulate Rise 360 that the block is complete
     window.parent.postMessage({ type: 'complete' }, '*');
 }
@@ -430,15 +572,26 @@ function showCompletionScreen() {
 // Restart logic
 function restartModule() {
     localStorage.removeItem('highflow-progress');
+    localStorage.removeItem('highflow-firstAttempt');
+    localStorage.removeItem('highflow-answered');
+    firstAttemptCorrect = 0;
+    hasFailedCurrentQuestion = false;
+    answeredQuestions.clear();
     currentQuestionIndex = 0;
     completionScreenEl.classList.add('hidden');
     document.querySelector('.app-main').classList.remove('hidden');
     renderQuestion(0);
 }
 
+// UX-2: Confirm dialog before resetting
 function resetProgress() {
-    localStorage.clear();
-    location.reload();
+    if (confirm('Er du sikker på at du vil slette all fremdrift?')) {
+        localStorage.removeItem('highflow-progress');
+        localStorage.removeItem('highflow-view');
+        localStorage.removeItem('highflow-firstAttempt');
+        localStorage.removeItem('highflow-answered');
+        location.reload();
+    }
 }
 
 // Bootstrap

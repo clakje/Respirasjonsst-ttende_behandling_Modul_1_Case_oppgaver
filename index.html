@@ -32,7 +32,7 @@
                 <span class="progress-text" id="progress-text">Spørsmål 1 av 10</span>
             </div>
             <div class="progress-bar-container">
-                <div class="progress-bar-fill" id="progress-bar-fill" style="width: 10%;"></div>
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
             </div>
         </header>
 
@@ -71,6 +71,7 @@
 
             <!-- Action Area -->
             <footer class="app-footer">
+                <button id="back-btn" class="btn btn-secondary btn-back hidden" onclick="previousQuestion()">Tilbake</button>
                 <button id="next-btn" class="btn btn-primary btn-next hidden" onclick="nextQuestion()">Neste</button>
             </footer>
         </main>
@@ -78,7 +79,8 @@
         <!-- Completion Screen -->
         <div id="completion-screen" class="completion-screen hidden">
             <div class="completion-card">
-                <h2>Bra jobbet!</h2>
+                <h2>🎉 Bra jobbet!</h2>
+                <p id="completion-score"></p>
                 <p>Du har nå fullført oppgavene og kan gå videre til neste side.</p>
                 <button class="btn btn-primary" onclick="restartModule()">Start på nytt</button>
             </div>

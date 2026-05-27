@@ -41,10 +41,17 @@ body {
     line-height: 1.5;
 }
 
+sub {
+    font-size: 1em;
+    vertical-align: -0.2em;
+    line-height: 0;
+}
+
 /* App Container (Desktop vs Mobile handling) */
 .app-container {
     margin: 0 auto;
     min-height: 100vh;
+    position: relative;
     background-color: var(--bg-main);
     display: flex;
     flex-direction: column;
@@ -147,8 +154,12 @@ body {
 .case-title {
     font-size: 1.15rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    margin-bottom: 1rem;
+    color: white;
+    background: linear-gradient(135deg, var(--hso-blue), var(--hso-blue-hover));
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    text-align: center;
 }
 
 .case-description {
@@ -177,7 +188,7 @@ body {
 
 .clinical-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(12, 1fr);
     gap: 1px;
     background-color: var(--border-color);
 }
@@ -199,6 +210,22 @@ body {
     font-size: 1rem;
     font-weight: 500;
     color: var(--text-primary);
+}
+
+.clinical-item.grid-row-1 {
+    grid-column: span 6;
+}
+
+.clinical-item.grid-row-2.span-4 {
+    grid-column: span 4;
+}
+
+.clinical-item.grid-row-2.span-3 {
+    grid-column: span 3;
+}
+
+.clinical-item.grid-row-2.span-6 {
+    grid-column: span 6;
 }
 
 .clinical-item.full-width {
@@ -284,7 +311,7 @@ body {
 
 .option-btn:disabled {
     cursor: default;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 /* Feedback Section */
@@ -323,9 +350,15 @@ body {
 /* Footer & Buttons */
 .app-footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 1rem;
     border-top: 1px solid var(--border-color);
+    gap: 0.5rem;
+}
+
+.btn-back {
+    margin-right: auto;
 }
 
 .btn {
@@ -470,7 +503,112 @@ body {
     display: none !important;
 }
 
+/* Fade transition for question changes (UX-3) */
+.app-main.fade-out {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.app-main.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* New case banner removed */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bug 4 fix: Responsive media queries for narrow screens */
+@media (max-width: 600px) {
+    .app-container.desktop {
+        padding: 0.5rem;
+    }
+
+    .app-header {
+        padding: 1rem;
+    }
+
+    .header-top h1 {
+        font-size: 1rem;
+    }
+
+    .progress-text {
+        font-size: 0.75rem;
+    }
+
+    .app-main {
+        padding: 1rem;
+        gap: 1.25rem;
+    }
+
+    .case-title {
+        font-size: 1rem;
+    }
+
+    .case-description {
+        font-size: 0.9rem;
+    }
+
+    .clinical-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .clinical-item.grid-row-1,
+    .clinical-item.grid-row-2.span-4,
+    .clinical-item.grid-row-2.span-3,
+    .clinical-item.grid-row-2.span-6 {
+        grid-column: span 1;
+    }
+
+    .clinical-item.full-width {
+        grid-column: span 2;
+    }
+
+    .clinical-label {
+        font-size: 0.7rem;
+    }
+
+    .clinical-value {
+        font-size: 0.875rem;
+    }
+
+    .question-text {
+        font-size: 0.95rem;
+    }
+
+    .option-btn {
+        padding: 0.75rem 1rem;
+        padding-left: 2.25rem;
+        font-size: 0.9rem;
+    }
+
+    .feedback-box {
+        padding: 1rem;
+    }
+
+    .feedback-text {
+        font-size: 0.875rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .view-selector-card {
+        padding: 1.5rem;
+    }
+
+    .completion-card h2 {
+        font-size: 1.35rem;
+    }
+
+    .completion-card p {
+        font-size: 0.9rem;
+    }
 }
