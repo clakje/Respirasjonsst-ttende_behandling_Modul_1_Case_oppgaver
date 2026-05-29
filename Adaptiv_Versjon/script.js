@@ -230,9 +230,6 @@ let hasFailedCurrentQuestion = false; // UX-1: track if user failed current ques
 const answeredQuestions = new Map(); // UX-6: map of index -> { selectedIndex, wasFirstAttempt }
 
 // DOM Elements
-const viewSelectorOverlay = document.getElementById('view-selector');
-const appContainer = document.getElementById('app-container');
-
 const progressBarFill = document.getElementById('progress-bar-fill');
 const progressText = document.getElementById('progress-text');
 
@@ -267,18 +264,19 @@ function formatSubscripts(text) {
     return html;
 }
 
+// Helper to report content height to parent window (useful for iframe autogrow in LMS/Rise)
+function sendHeightToParent() {
+    setTimeout(() => {
+        const height = document.body.scrollHeight || document.documentElement.scrollHeight;
+        window.parent.postMessage({
+            type: 'resize',
+            height: height
+        }, '*');
+    }, 50);
+}
+
 // Initialize the app
 function init() {
-    // Check local storage for view mode
-    const savedView = localStorage.getItem('highflow-view');
-    if (!savedView) {
-        // Show view selector if not set
-        viewSelectorOverlay.classList.add('active');
-    } else {
-        viewSelectorOverlay.classList.remove('active');
-        setViewMode(savedView, false); // Don't save again
-    }
-
     // Check local storage for progress
     const savedProgress = localStorage.getItem('highflow-progress');
     const savedScore = localStorage.getItem('highflow-firstAttempt');
@@ -304,33 +302,10 @@ function init() {
     }
 
     renderQuestion(currentQuestionIndex);
-}
 
-// Function to show View Selector
-function showViewSelector() {
-    viewSelectorOverlay.classList.add('active');
-}
-
-// Function to set View Mode (Desktop/Mobile)
-function setViewMode(mode, save = true) {
-    if (save) {
-        localStorage.setItem('highflow-view', mode);
-    }
-
-    viewSelectorOverlay.classList.remove('active');
-
-    if (mode === 'mobile') {
-        appContainer.classList.remove('desktop');
-        appContainer.classList.add('mobile');
-    } else {
-        appContainer.classList.remove('mobile');
-        appContainer.classList.add('desktop');
-    }
-
-    // If we just set it up and we are on index 0, make sure it's rendered
-    if (save && currentQuestionIndex === 0 && !hasAnsweredCurrentQuestion) {
-        renderQuestion(currentQuestionIndex);
-    }
+    // Send initial height and register resize listener
+    sendHeightToParent();
+    window.addEventListener('resize', sendHeightToParent);
 }
 
 // Render the current question to DOM
@@ -421,6 +396,7 @@ function renderQuestion(index) {
 
     // Save progress
     localStorage.setItem('highflow-progress', index);
+    sendHeightToParent();
 }
 
 // UX-6: Render a previously answered question as read-only
@@ -452,6 +428,7 @@ function renderAnsweredQuestion(index, data) {
     } else if (index >= questionsData.length - 1) {
         nextBtnEl.classList.add('hidden');
     }
+    sendHeightToParent();
 }
 
 // Handle Option Selection
@@ -499,6 +476,7 @@ function selectOption(selectedIndex) {
         // Scroll to bottom slightly
         setTimeout(() => {
             nextBtnEl.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            sendHeightToParent();
         }, 100);
     } else {
         // UX-1: Mark that user has failed this question
@@ -512,6 +490,7 @@ function selectOption(selectedIndex) {
         feedbackTextEl.innerHTML = '✗ Prøv igjen';
         feedbackBoxEl.className = 'feedback-box incorrect';
         feedbackSectionEl.classList.remove('hidden');
+        sendHeightToParent();
     }
 }
 
@@ -567,6 +546,7 @@ function showCompletionScreen() {
 
     // Notify Articulate Rise 360 that the block is complete
     window.parent.postMessage({ type: 'complete' }, '*');
+    sendHeightToParent();
 }
 
 // Restart logic
@@ -581,6 +561,7 @@ function restartModule() {
     completionScreenEl.classList.add('hidden');
     document.querySelector('.app-main').classList.remove('hidden');
     renderQuestion(0);
+    sendHeightToParent();
 }
 
 let resetConfirmState = false;

@@ -1,0 +1,577 @@
+:root {
+    /* Clinical Color Palette */
+    --hso-blue: #004b87;
+    --hso-blue-light: #e6f0f9;
+    --hso-blue-hover: #003666;
+    
+    --bg-main: #f4f7f9;
+    --bg-card: #ffffff;
+    
+    --text-primary: #1d1d1f;
+    --text-secondary: #5a5a5c;
+    
+    --border-color: #d2dce6;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+    
+    /* Feedback Colors */
+    --correct-border: #28a745;
+    --correct-bg: #eafbee;
+    --correct-text: #1d7c30;
+    
+    --incorrect-border: #dc3545;
+    --incorrect-bg: #fbeded;
+    --incorrect-text: #b02331;
+    
+    --clinical-red: #d32f2f; /* For vital signs like high pulse/low spo2 if we want to highlight, but sticking to clinical neutral for now */
+    
+    --transition: all 0.2s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+sub {
+    font-size: 1em;
+    vertical-align: -0.2em;
+    line-height: 0;
+}
+
+/* App Container (Responsive Layout) */
+.app-container {
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--bg-main);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Desktop layout (default style for larger viewports) */
+.app-container {
+    max-width: 900px;
+    padding: 2rem;
+}
+
+/* Mobile/Tablet layout: automatic when width <= 768px */
+@media (max-width: 768px) {
+    .app-container {
+        max-width: 100%;
+        padding: 0;
+        background-color: #fff;
+    }
+
+    .app-container .app-main {
+        padding: 1rem;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .app-container .app-header {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+    }
+}
+
+/* Header & Progress */
+.app-header {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.header-top h1 {
+    flex: 1;
+    text-align: left;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--hso-blue);
+}
+
+.header-top .btn {
+    flex: 0 0 auto;
+    margin: 0 0.5rem;
+    background-color: #E7F0F9;
+    text-align: center;
+}
+
+.progress-text {
+    flex: 1;
+    text-align: right;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.progress-bar-container {
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--hso-blue);
+    transition: width 0.4s ease;
+}
+
+/* Main Content */
+.app-main {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 0 0 8px 8px;
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Case Section */
+.case-section {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+}
+
+.case-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+    background: linear-gradient(135deg, var(--hso-blue), var(--hso-blue-hover));
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.case-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* Clinical Data Box */
+.clinical-data-box {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.clinical-header {
+    background-color: var(--hso-blue-light);
+    color: var(--hso-blue);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.clinical-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1px;
+    background-color: var(--border-color);
+}
+
+.clinical-item {
+    background-color: var(--bg-card);
+    padding: 0.75rem 1rem;
+}
+
+.clinical-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.clinical-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.clinical-item.grid-row-1 {
+    grid-column: span 6;
+}
+
+.clinical-item.grid-row-2.span-4 {
+    grid-column: span 4;
+}
+
+.clinical-item.grid-row-2.span-3 {
+    grid-column: span 3;
+}
+
+.clinical-item.grid-row-2.span-6 {
+    grid-column: span 6;
+}
+
+.clinical-item.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Question Section */
+.question-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.option-btn {
+    text-align: left;
+    padding: 1rem 1.25rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.option-btn::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.option-btn:hover:not(:disabled) {
+    border-color: var(--hso-blue);
+    background-color: var(--hso-blue-light);
+}
+
+.option-btn:hover:not(:disabled)::before {
+    border-color: var(--hso-blue);
+}
+
+.option-btn.selected-correct {
+    border-color: var(--correct-border);
+    background-color: var(--correct-bg);
+    color: var(--correct-text);
+}
+
+.option-btn.selected-correct::before {
+    border-color: var(--correct-border);
+    background-color: var(--correct-border);
+}
+
+.option-btn.selected-incorrect {
+    border-color: var(--incorrect-border);
+    background-color: var(--incorrect-bg);
+    color: var(--incorrect-text);
+}
+
+.option-btn.selected-incorrect::before {
+    border-color: var(--incorrect-border);
+    background-color: var(--incorrect-border);
+}
+
+.option-btn.correct-reveal {
+    border-color: var(--correct-border);
+    border-width: 2px;
+}
+
+.option-btn:disabled {
+    cursor: default;
+    opacity: 0.6;
+}
+
+/* Feedback Section */
+.feedback-section {
+    animation: fadeIn 0.4s ease;
+}
+
+.feedback-box {
+    padding: 1.25rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--hso-blue);
+    background-color: var(--bg-main);
+}
+
+.feedback-box.correct {
+    border-left-color: var(--correct-border);
+    background-color: var(--correct-bg);
+}
+
+.feedback-box.incorrect {
+    border-left-color: var(--incorrect-border);
+    background-color: var(--incorrect-bg);
+}
+
+.feedback-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.feedback-text {
+    font-size: 0.95rem;
+}
+
+/* Footer & Buttons */
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    gap: 0.5rem;
+}
+
+.btn-back {
+    margin-right: auto;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background-color: var(--hso-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--hso-blue-hover);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-main);
+}
+
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+}
+
+.btn-text {
+    background: none;
+    color: var(--text-secondary);
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    text-decoration: underline;
+}
+
+.btn-text:hover {
+    color: var(--text-primary);
+}
+
+/* View selector styles removed - responsive layout is now automatic */
+
+/* Completion Screen */
+.completion-screen {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--bg-card);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 8px;
+}
+
+.completion-card {
+    text-align: center;
+    padding: 2rem;
+    max-width: 500px;
+}
+
+.completion-card h2 {
+    color: var(--hso-blue);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.completion-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.completion-links {
+    text-align: left;
+    background-color: var(--bg-main);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.completion-links ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+    color: var(--hso-blue);
+}
+
+/* Helpers */
+.hidden {
+    display: none !important;
+}
+
+/* Fade transition for question changes (UX-3) */
+.app-main.fade-out {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.app-main.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* New case banner removed */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bug 4 fix: Responsive media queries for narrow screens */
+@media (max-width: 600px) {
+    .app-container {
+        padding: 0;
+    }
+
+    .app-header {
+        padding: 1rem;
+    }
+
+    .header-top h1 {
+        font-size: 1rem;
+    }
+
+    .progress-text {
+        font-size: 0.75rem;
+    }
+
+    .app-main {
+        padding: 1rem;
+        gap: 1.25rem;
+    }
+
+    .case-title {
+        font-size: 1rem;
+    }
+
+    .case-description {
+        font-size: 0.9rem;
+    }
+
+    .clinical-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .clinical-item.grid-row-1,
+    .clinical-item.grid-row-2.span-4,
+    .clinical-item.grid-row-2.span-3,
+    .clinical-item.grid-row-2.span-6 {
+        grid-column: span 1;
+    }
+
+    .clinical-item.full-width {
+        grid-column: span 2;
+    }
+
+    .clinical-label {
+        font-size: 0.7rem;
+    }
+
+    .clinical-value {
+        font-size: 0.875rem;
+    }
+
+    .question-text {
+        font-size: 0.95rem;
+    }
+
+    .option-btn {
+        padding: 0.75rem 1rem;
+        padding-left: 2.25rem;
+        font-size: 0.9rem;
+    }
+
+    .feedback-box {
+        padding: 1rem;
+    }
+
+    .feedback-text {
+        font-size: 0.875rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .view-selector-card {
+        padding: 1.5rem;
+    }
+
+    .completion-card h2 {
+        font-size: 1.35rem;
+    }
+
+    .completion-card p {
+        font-size: 0.9rem;
+    }
+}

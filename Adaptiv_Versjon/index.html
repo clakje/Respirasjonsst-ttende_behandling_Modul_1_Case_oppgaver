@@ -9,26 +9,13 @@
 </head>
 <body>
 
-    <!-- Skjerm for å velge visning (Mobil / Desktop) -->
-    <div id="view-selector" class="view-selector-overlay active">
-        <div class="view-selector-card">
-            <h2>Velg visning</h2>
-            <p>Hvordan ønsker du å se modulen?</p>
-            <div class="view-options">
-                <button class="btn btn-primary" onclick="setViewMode('mobile')">Jeg bruker mobil.</button>
-                <button class="btn btn-secondary" onclick="setViewMode('desktop')">Jeg bruker PC.</button>
-            </div>
-            <button class="btn btn-text" onclick="resetProgress(this)">Slett lagret fremdrift</button>
-        </div>
-    </div>
-
-    <div id="app-container" class="app-container desktop">
+    <div id="app-container" class="app-container">
         
         <!-- Header & Progress -->
         <header class="app-header">
             <div class="header-top">
                 <h1>High-flow Behandling</h1>
-                <button class="btn btn-secondary btn-sm" onclick="showViewSelector()">Endre visning</button>
+                <button class="btn btn-secondary btn-sm" onclick="resetProgress(this)">Start på nytt</button>
                 <span class="progress-text" id="progress-text">Spørsmål 1 av 10</span>
             </div>
             <div class="progress-bar-container">
