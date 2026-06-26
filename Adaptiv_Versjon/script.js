@@ -19,7 +19,7 @@ const questionsData = [
             "D. Høy puls og hypertensjon"
         ],
         correctAnswerIndex: 1, // B
-        reasoning: "Riktig! Denne pasienten har lav SpO2 til tross for 10 L/min oksygen på maske. Her må vi sikre korrekt oksygenmengde samt kunne gi høyere konsentrasjon av oksygen med high-flow. Denne pasienten vil også ha stor fordel av både fuktet luft, redusert dødrom og inspiratorisk støtte med dynamisk PEEP. Husk å følge opp bakenforliggende behandling som kan være like viktig for utfallet."
+        reasoning: "Riktig! Denne pasienten har lav SpO₂ til tross for 10 L/min oksygen på maske. Her må vi sikre korrekt oksygenmengde samt kunne gi høyere konsentrasjon av oksygen med high-flow. Denne pasienten vil også ha stor fordel av både fuktet luft, redusert dødrom og inspiratorisk støtte med dynamisk PEEP. Husk å følge opp bakenforliggende behandling som kan være like viktig for utfallet."
     },
     {
         caseTitle: "Case 1: Hypoksemisk respirasjonssvikt",
@@ -252,7 +252,7 @@ function formatSubscripts(text) {
     if (typeof text !== 'string') return text;
     let html = text;
     // Replace most specific terms first, then general terms
-    html = html.replace(/spo[₂2]/gi, 'S<sub>p</sub>O<sub>2</sub>');
+    html = html.replace(/spo[₂2]/gi, 'SpO<sub>2</sub>');
     html = html.replace(/paco[₂2]/gi, 'P<sub>a</sub>CO<sub>2</sub>');
     html = html.replace(/pao[₂2]/gi, 'P<sub>a</sub>O<sub>2</sub>');
     html = html.replace(/pco[₂2]/gi, 'pCO<sub>2</sub>');
